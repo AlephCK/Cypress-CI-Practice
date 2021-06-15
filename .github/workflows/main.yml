@@ -27,5 +27,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          spec: cypress/integration/tests/*.spec.js
+          spec: cypress/integration/tests/*.js
           browser: firefox
