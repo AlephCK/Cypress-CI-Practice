@@ -4,11 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ng serve",
+    "test": "ng test",
+    "build": "ng build --prod",
+    "ng": "ng",
+    "cypress:ci": "concurrently \"cypress run\" --kill-others \"ng serve\" --success first"
   },
   "author": "AlephCK",
   "license": "ISC",
   "dependencies": {
     "cypress": "^7.5.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
   }
 }
