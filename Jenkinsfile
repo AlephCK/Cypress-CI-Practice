@@ -13,24 +13,9 @@ pipeline {
                 sh 'npm i'
             }
         }
-        stage('Build') {
+        stage('Run Tests') {
             steps {
-                sh 'npm run build'
-            }
-        }
-        stage('Unit Tests') {
-            steps {
-                sh 'npm run test'
-            }
-        }
-        stage('e2e Tests') {
-            steps {
-                sh 'npm run cypress:ci'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'cypress run --spec cypress/integration/tests/*.js'
             }
         }
     }
