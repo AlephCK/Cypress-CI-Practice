@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'cypresss/base:10'
-        }
-    }
-    
+    agent any
     tools {nodejs "node"}
 
     environment {
